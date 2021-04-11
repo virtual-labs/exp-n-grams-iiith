@@ -6,13 +6,14 @@
 **Q2**. A character based N-gram is a set of n consecutive characters extracted from a word. It is generally used in measuring the similarity of character strings. Some of its applications are in spellcheckers, stemming, OCR error correction, etc.
 
 Given, four valid words:
-(a) quote
-(b) patient
-(c) patent
-(d) impatient
+
+(a) quote</br>
+(b) patient</br>
+(c) patent</br>
+(d) impatient</br>
 
 **Q3**. Calculate the probability of occurrence of each word given below. Which of these represent the correct spelling?
 
-(a) qotient
-(b) quotent
-(c) quotient
+(a) qotient</br>
+(b) quotent</br>
+(c) quotient</br>
