@@ -5,7 +5,24 @@
     <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
-		<!-- Your code goes here-->
+  <!-- Your code goes here-->
+   <div id="n-gram">
+                                <div align="center">
+                                    <form action="javascript:selectCorpus()" method="post" target="_parent">
+                                        <select id="corpus" name="corpus">";
+                                            <option value="1.txt">Corpus A</option>
+                                            <option value="2.txt">Corpus B</option>
+                                            <option value="9-a.jpg">Corpus C</option>
+                                        </select>
+                                        <div style="text-align:center">
+                                            <br/>
+                                            <br/>
+                                            <input onsubmit="selectCorpus();" type="submit" value="Select Corpus"/>
+                                        </div>
+                                    </form>
+                                    <div id="display"></div>
+                                </div>
+                            </div>
 
 	<!-- Add JS at the bottom of HTML file --> 
         <script src="./js/main.js"></script>
