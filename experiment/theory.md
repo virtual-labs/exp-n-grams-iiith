@@ -40,7 +40,7 @@ Bigram Table:
 |I  |0  |0   |0  |0  |0 |0  |1  |
 |read|0.5 |0   |0  |0.5|0  |0  |0  |
 
-**P(**(eos) you read a book (eos)**)**
-= **P(**you|eos**)** * **P(**read|you**)** * **P(**a|read**)** * **P(**book|a**)** * **P(**eos|book**)**
-= 0.33 * 0.5 * 0.5 * 0.5 * 0.5
+**P(**(eos) you read a book (eos)**)**<br/>
+= **P(**you|eos**)** * **P(**read|you**)** * **P(**a|read**)** * **P(**book|a**)** * **P(**eos|book**)**<br/>
+= 0.33 * 0.5 * 0.5 * 0.5 * 0.5<br/>
 =.020625
