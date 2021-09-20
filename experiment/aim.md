@@ -4,3 +4,4 @@ Probability of a sentence can be calculated by the probability of sequence of wo
 <p style="text-align: center;"><img src="images/9-a.jpg"></p>
 
 Here, W<sub>n</sub> refers to the word token corresponding to the nth word in a sequence.
+
