@@ -5,4 +5,3 @@ Probability of a sentence can be calculated by the probability of sequence of wo
 
 Here, W<sub>n</sub> refers to the word token corresponding to the nth word in a sequence.
 
-The objective of this experiment is to learn to calculate bigrams from a given corpus and calculate probability of a sentence.
