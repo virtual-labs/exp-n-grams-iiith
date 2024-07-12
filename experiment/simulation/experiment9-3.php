@@ -40,8 +40,8 @@ $file=$_POST['file'];
 $sentence_path="Exp9/sentences/sen-".$file.".txt";
 $f1 =  fopen($sentence_path, "r");
 $buffer0=fread($f1, filesize($sentence_path));
-$buffer1=split("&", $buffer0);
-$sen=split("#", $buffer1[0]);
+$buffer1=preg_split('#&#m', $buffer0);
+$sen=preg_split('/#/', (string) $buffer1[0]);
 $count=count($sen);  
 $answers=$buffer1[1];
 ?>

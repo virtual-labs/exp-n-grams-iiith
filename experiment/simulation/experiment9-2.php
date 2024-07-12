@@ -8,8 +8,8 @@
 </head>
 <body><div id='answer'>
 <?php
-$bigrams=explode(",",$_GET['bigrams']);
-$order=explode(",",$_GET['order']);
+$bigrams=explode(",",(string) $_GET['bigrams']);
+$order=explode(",",(string) $_GET['order']);
 $size=count($order);
 $file=$_GET['file'];
 echo "<p style=\"text-align:center;\"> <h1>Bigram probability Table for Corpus".$file."</h1></p><br/><br/>";

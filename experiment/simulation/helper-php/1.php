@@ -12,7 +12,7 @@ sort($Files, SORT_NUMERIC); ?>
 
 
 <div align="center">
-<form action="javascript:selectCorpus()" target="_parent" method="post">
+<form action="javascript:selectCorpus()" target="_self" method="post">
 <select name="corpus" id="corpus">";
 <?php
 foreach ($Files as &$x)
