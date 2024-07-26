@@ -1,5 +1,6 @@
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="style.css" media="screen" />  
 <script class='gtm'>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W59SWTR');</script>
 
 <script type="text/javascript"> 
@@ -47,6 +48,26 @@ $('#sentence').load('experiment9-3.php',{file:cno});
 function check(){ alert('hi')};
 
 </script>
+<script>
+        $(document).ready(function(){
+            $("#showAns a").click(function(event){
+                event.preventDefault(); 
+                var href = $(this).attr('href');
+                
+                $.ajax({
+                    url: href,
+                    type: 'GET',
+                    success: function(data) {
+                        
+                        $("#answerContainer").html(data);
+                    },
+                    error: function() {
+                        $("#answerContainer").html("<p>Error loading content.</p>");
+                    }
+                });
+            });
+        });
+    </script>
 </head>
 <body>
 <?php
@@ -54,7 +75,7 @@ $bigrams=$_POST['bigrams'];
 $b=str_replace(",", "#",$bigrams);
 $o=$_POST['order'];
 $file=$_POST['file'];
-$order=explode(",", $o);
+$order=explode(",", (string) $o);
 $size=count($order);
 ?>
 <br/><br/><div align="center">
@@ -77,7 +98,7 @@ for($k=0;$k<$size;$k++)
 } 
 echo "</table><br/><br/>";
 echo "<br/><button onclick=\"checkCondition('".$bigrams."', '".$i."', '".$file."');\"> Submit</button><br/><br/>";
-echo"<div id=\"showAns\"><a href=\"experiment9-2.php?bigrams=".$bigrams."&order=".$o."&file=".$file."\" target=\"_blank\">Show Answer</a></div>";
+echo"<div id=\"showAns\"><a href=\"experiment9-2.php?bigrams=".$bigrams."&order=".$o."&file=".$file."\" target=\"_blank\">Show Answer</a></div> <div id=\"answerContainer\" style=\"flex:1\"></div>";
 #echo "<div id=\"showAns\"><button onclick=\"window.open('experiment9-2.php?bigrams=".$bigrams."&order=".$o."&file=".$file."');\"> Show Answer</button></div>";
 echo "<div id=\"sentence\"></div>";
 echo "</div>";

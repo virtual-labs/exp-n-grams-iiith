@@ -18,12 +18,20 @@ $('#table').load('experiment9-1.php', {bigrams:bigrams, order:order, file:file})
 $f=$_GET['fileno'];
 $file=$f.'.txt';
 $full_path='Exp9/'.$file;
-$f1 =  fopen($full_path, "r");
-$buffer=fread($f1, filesize($full_path));
-$parts=split("&", $buffer); 
-$corpus=$parts[0];      
-$bigrams=$parts[1];
-$order=$parts[2]; 
+
+$corpus = '';
+$bigrams = '';
+$order = '';
+
+if (file_exists($full_path)) {
+    $f1 = fopen($full_path, "r");
+    $buffer = fread($f1, filesize($full_path));
+    $parts = preg_split('#&#m', $buffer);
+    $corpus = $parts[0];      
+    $bigrams = $parts[1];
+    $order = $parts[2];
+}
+
 ?>
 <br/> <br/>
 <?php 
