@@ -1,46 +1,66 @@
-A combination of words forms a sentence. However, such a formation is meaningful only when the words are arranged in some order.
+N-Gram models are fundamental tools in Natural Language Processing (NLP) for modeling the probability of word sequences. They help us understand and generate language by assigning probabilities to strings of words, making it possible to distinguish between likely and unlikely sentences.
 
-Eg: Sit I car in the
+---
 
-Such a sentence is not grammatically acceptable. However some perfectly grammatical sentences can be nonsensical too!
+### 1. What is an N-Gram?
 
-Eg: Colorless green ideas sleep furiously
+An **N-Gram** is a contiguous sequence of N items (typically words or tokens) from a given text. For example:
 
-One easy way to handle such unacceptable sentences is by assigning probabilities to the strings of words i.e, how likely the sentence is.
+- **Unigram (N=1):** "I", "read", "books"
+- **Bigram (N=2):** "I read", "read books"
+- **Trigram (N=3):** "I read books"
 
-### Probability of a sentence
+---
 
-If we consider each word occurring in its correct location as an independent event,the probability of the sentences is : P(w(1), w(2)..., w(n-1), w(n))
+### 2. The Markov Assumption
 
-Using chain rule:
-= **P(**w(1)**)** * **P(**w(2) | w(1)**)** * **P(**w(3) | w(1)w(2)**)** ... **P(**w(n) | w(1)w(2) ... w(n-1)**)**
+Calculating the probability of a sentence by considering all possible word dependencies is computationally expensive. The **Markov assumption** simplifies this by stating that the probability of a word depends only on the previous (N-1) words:
 
-### Bigrams
+> **P(w₁, w₂, ..., wₙ) ≈ Π P(wᵢ | wᵢ₋₁, ..., wᵢ₋₍ₙ₋₁₎)**
 
- We can avoid this very long calculation by approximating that the probability of a given word depends only on the probability of its previous words. This assumption is called Markov assumption and such a model is called Markov model- bigrams. Bigrams can be generalized to the n-gram which looks at (n-1) words in the past. A bigram is a first-order Markov model.
+For a bigram model (N=2):
 
-Therefore ,
-**P(**w(1), w(2)..., w(n-1), w(n)**)** = **P(**w(2)|w(1)) P(w(3)|w(2)**)** ... **P(**w(n)|w(n-1)**)**
+> **P(w₁, w₂, ..., wₙ) ≈ P(w₁) × P(w₂|w₁) × P(w₃|w₂) × ... × P(wₙ|wₙ₋₁)**
 
-We use (eos) tag to mark the beginning and end of a sentence.
+---
 
-A bigram table for a given corpus can be generated and used as a lookup table for calculating probability of sentences.
+### 3. Building an N-Gram Table
 
-Eg: Corpus - (eos) You book a flight (eos) I read a book (eos) You read (eos)
+To estimate these probabilities, we count how often word sequences occur in a corpus. For example, a bigram table for the corpus:
 
-Bigram Table:
+> (eos) You book a flight (eos) I read a book (eos) You read (eos)
 
-|   |(eos)|you|book|a|flight|I|read|
-|---|---|---|---|---|---|---|---|
-|(eos)|0  |0.33|0  |0  |0 |0.25 |0 |
-|you|0  |0  |0.5|0  |0  |0  |0.5 |
-|book|0.5|0  |0 |0.5|0  |0  |0  |
-|a  |0  |0   |0.5|0  |0.5|0  |0  |
-|flight|1  |0  |0  |0  |0  |0  |0  |
-|I  |0  |0   |0  |0  |0 |0  |1  |
-|read|0.5 |0   |0  |0.5|0  |0  |0  |
+Might look like:
 
-**P(**(eos) you read a book (eos)**)**<br/>
-= **P(**you|eos**)** * **P(**read|you**)** * **P(**a|read**)** * **P(**book|a**)** * **P(**eos|book**)**<br/>
-= 0.33 * 0.5 * 0.5 * 0.5 * 0.5<br/>
-=.020625
+|        | (eos) | you  | book | a   | flight | I    | read |
+| ------ | ----- | ---- | ---- | --- | ------ | ---- | ---- |
+| (eos)  | 0     | 0.33 | 0    | 0   | 0      | 0.25 | 0    |
+| you    | 0     | 0    | 0.5  | 0   | 0      | 0    | 0.5  |
+| book   | 0.5   | 0    | 0    | 0.5 | 0      | 0    | 0    |
+| a      | 0     | 0    | 0.5  | 0   | 0.5    | 0    | 0    |
+| flight | 1     | 0    | 0    | 0   | 0      | 0    | 0    |
+| I      | 0     | 0    | 0    | 0   | 0      | 0    | 1    |
+| read   | 0.5   | 0    | 0    | 0.5 | 0      | 0    | 0    |
+
+---
+
+### 4. Calculating Sentence Probability
+
+To calculate the probability of a sentence using a bigram model:
+
+> **P((eos) you read a book (eos)) = P(you|eos) × P(read|you) × P(a|read) × P(book|a) × P(eos|book)**
+
+For the example above:
+
+> 0.33 × 0.5 × 0.5 × 0.5 × 0.5 = 0.020625
+
+---
+
+### 5. Applications and Limitations
+
+- **Applications:** Language modeling, speech recognition, spelling correction, text prediction.
+- **Limitations:** Data sparsity, inability to capture long-range dependencies, zero probabilities for unseen N-Grams (solved by smoothing techniques).
+
+---
+
+N-Gram models provide a simple yet powerful way to model language, forming the basis for many NLP applications and more advanced models.

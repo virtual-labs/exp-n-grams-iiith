@@ -1,0 +1,1 @@
+This folder contains corpus files and other data for the n-grams simulation.
