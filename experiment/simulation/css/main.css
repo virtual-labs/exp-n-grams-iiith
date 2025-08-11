@@ -1,217 +1,3 @@
-@media (max-width: 767px) {
-  .button-row {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 100% !important;
-    margin: 0 auto !important;
-    gap: 0.5rem !important;
-  }
-  .button-row button,
-  .button-row .sim-button {
-    width: 95% !important;
-    max-width: 320px !important;
-    min-width: 120px !important;
-    margin: 0.2rem auto !important;
-    display: block !important;
-  }
-}
-@media (max-width: 600px) {
-  #main-2pane-container {
-    flex-direction: column;
-    gap: 0.5rem;
-    max-width: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  #left-pane,
-  #right-pane {
-    min-width: 0;
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    padding: 0 0.5rem;
-    display: flex;
-    flex-direction: column;
-    position: static;
-    visibility: visible;
-    height: auto;
-    overflow: visible;
-  }
-  #left-pane {
-    margin-bottom: 0.5rem;
-    min-height: 1px;
-  }
-  #corpus-selection {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto 0.5rem auto;
-    padding: 0.5rem 0.2rem;
-    box-sizing: border-box;
-  }
-  .dropdown-row,
-  select,
-  .viterbi-dropdown {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    margin: 0 auto 0.5rem auto !important;
-    box-sizing: border-box;
-    font-size: 1.1em;
-  }
-}
-.main-content {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-}
-
-.instructions-panel {
-  width: 100%;
-  max-width: 100%;
-  margin: 0 auto 18px auto;
-  box-sizing: border-box;
-}
-
-#main-2pane-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
-}
-
-#left-pane {
-  flex: 0 0 30%;
-  min-width: 240px;
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  box-sizing: border-box;
-  overflow-x: hidden;
-}
-
-#right-pane {
-  flex: 1 1 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  box-sizing: border-box;
-  overflow-x: hidden;
-  width: 100%;
-  max-width: 100%;
-}
-
-#output-table-container {
-  overflow-x: auto !important;
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-.dropdown-row {
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-  margin: 0 0 12px 0;
-  box-sizing: border-box;
-}
-
-.corpus-sentences,
-.corpus-content,
-#find-bigram-btn-container,
-#bigramBtn {
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-  margin: 0 0 12px 0;
-  box-sizing: border-box;
-}
-/* --- Instructions Panel (Word Analysis Style) --- */
-.instructions-panel {
-  width: 100%;
-  max-width: 100%;
-  margin: 1.2rem auto 1.2rem auto;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: center;
-  padding: 0;
-  border-radius: 0;
-}
-.instructions-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  background-color: var(--color-primary);
-  color: white;
-  border-radius: var(--radius-md) var(--radius-md) 0 0;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.instructions-header .arrow-icon {
-  font-size: 1.2rem;
-  transition: transform 0.3s ease;
-  color: #2a1a6e;
-  transform: rotate(0deg); /* ▼ by default (collapsed) */
-}
-.instructions-header:not(.collapsed) .arrow-icon {
-  transform: rotate(180deg); /* ▲ when expanded */
-}
-.instructions-header:hover {
-  background-color: var(--color-primary-dark);
-}
-.instructions-header h3 {
-  margin: 0;
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-.instructions-content {
-  background-color: white;
-  padding: 1rem;
-  border: 1px solid var(--color-neutral-200);
-  border-top: none;
-  border-radius: 0 0 var(--radius-md) var(--radius-md);
-  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
-  max-height: 500px;
-  opacity: 1;
-  overflow: hidden;
-}
-.instructions-content.collapsed {
-  max-height: 0;
-  opacity: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  border-bottom: none;
-}
-.instructions-list {
-  list-style: disc inside;
-  margin: 0;
-  padding-left: 1.2em;
-}
-.instructions-list li {
-  margin-bottom: 0.5em;
-  font-size: 1em;
-}
-/* Ensure dropdown-row width matches container */
-.dropdown-row {
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-  margin: 0 0 12px 0;
-  box-sizing: border-box;
-}
 :root {
   --color-primary: #4361ee;
   --color-primary-light: #4895ef;
@@ -284,7 +70,6 @@ ol,
 .sim-sentence-header,
 .instructions-list,
 .instructions-header,
-.viterbi-table,
 .pos-tags-table,
 .emission-matrix-table,
 .transition-matrix-table,
@@ -312,19 +97,16 @@ ol,
 }
 
 .main-content {
-  width: 80vw;
-  max-width: 100vw;
-  margin-left: 10vw;
-  margin-right: 10vw;
-  margin-top: 0;
-  margin-bottom: 0;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   box-sizing: border-box;
-  min-width: 0;
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  /* Remove overflow-x: auto here to prevent bar on landing */
+  padding: 0 15px;
 }
+
 /* Only allow horizontal scroll on table containers, not on page load */
 #output-table-container {
   overflow-x: auto !important;
@@ -332,6 +114,7 @@ ol,
   width: 100%;
   box-sizing: border-box;
 }
+
 /* Ensure proper order for all screens */
 .instructions-panel {
   order: 0; /* Instructions panel first */
@@ -340,38 +123,38 @@ ol,
 #main-2pane-container {
   display: flex;
   flex-direction: row;
-  gap: 2rem;
+  gap: 1rem; /* Reduced from 2rem to 1rem */
   width: 100%;
   max-width: 100%;
-  margin: 0;
+  margin: 0 auto;
   box-sizing: border-box;
+  overflow: hidden; /* Prevent table spillage */
 }
 
-/* Instructions Panel */
+/* Instructions Panel - Remove bottom curves to match word analysis */
 .instructions-panel {
-  order: 0;
   width: 100%;
   max-width: 100%;
-  margin: 0 auto 18px auto;
+  margin: 0 auto 1.2rem auto;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   justify-content: center;
   padding: 0;
-  border-radius: 16px;
+  border-radius: 16px 16px 0 0; /* Remove bottom curves */
 }
 
 .instructions-header {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 18px 32px;
+  padding: 12px 24px;
   background: linear-gradient(90deg, #6ef2e6 0%, #4895ef 100%);
   border-bottom: 2px solid #4895ef;
   cursor: pointer;
   transition: background 0.2s;
-  border-radius: 16px;
+  border-radius: 16px 16px 0 0; /* Remove bottom curves */
   gap: 12px;
   box-shadow: 0 4px 12px rgba(67, 97, 238, 0.08),
     0 2px 4px rgba(67, 97, 238, 0.04);
@@ -424,7 +207,7 @@ ol,
   width: 100%;
   box-sizing: border-box;
   background: var(--color-neutral-100);
-  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  border-radius: 0; /* Remove curves to match word analysis */
   box-shadow: 0 2px 8px rgba(67, 97, 238, 0.04);
   transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
     opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -465,48 +248,34 @@ ol,
   display: none;
 }
 
-/* Main Layout - 2-pane container */
-#main-2pane-container {
-  /* see above for new flex row layout */
-}
-
 /* Left pane - corpus selection, test sentence, and matrices */
 #left-pane {
-  flex: 1 1 0;
-  min-width: 240px;
+  flex: 0 0 25% !important; /* Reduced from 40% to 25% */
+  width: 25% !important;
+  max-width: 25% !important;
+  min-width: 280px; /* Reduced from 350px */
+  padding: 15px;
+  box-sizing: border-box;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+}
+
+/* Right pane - results and output */
+#right-pane {
+  flex: 1 !important; /* Takes all remaining space */
+  width: auto !important; /* Let it take remaining space */
+  max-width: none !important; /* Remove max-width constraint */
+  padding: 15px;
   box-sizing: border-box;
-  overflow-x: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
 }
 
-/* Right pane - Viterbi table */
-  #left-pane,
-  #right-pane {
-    min-width: 0;
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    padding: 0 0.5rem;
-    display: flex;
-    flex-direction: column;
-    position: static;
-    visibility: visible;
-    height: auto;
-    overflow: visible;
-    flex: 1 1 auto;
-  }
-  #left-pane {
-    margin-bottom: 0.5rem;
-    min-height: 180px; /* Show dropdown and result by default, viterbi style */
-  }
-  #right-pane {
-    min-height: 100px;
-  }
-}
-
-.viterbi-section,
 .matrices-section {
   background: #fff;
   border-radius: var(--radius-lg);
@@ -521,7 +290,6 @@ ol,
   align-items: center; /* Center content horizontally */
 }
 
-/* POS Tags Section - matching viterbi-table styling */
 .pos-tags-section {
   background: #fff;
   border-radius: var(--radius-lg);
@@ -544,8 +312,7 @@ ol,
 }
 
 /* Section Titles */
-.sim-section-title,
-.viterbi-section-title {
+.sim-section-title {
   color: var(--color-primary-dark);
   font-size: 1.3em;
   margin: 0 0 0.1rem 0;
@@ -581,9 +348,26 @@ ol,
   letter-spacing: 0.01em;
 }
 
+/* Fix dropdown width consistency */
+.dropdown-row,
+.dropdown-container {
+  width: 100% !important;
+  min-width: 250px !important;
+  max-width: 100% !important;
+  box-sizing: border-box;
+  margin: 0 0 12px 0;
+}
+
+.dropdown-row select,
+.dropdown-container select {
+  width: 100% !important;
+  min-width: 250px !important;
+  max-width: 100% !important;
+  box-sizing: border-box;
+}
+
 /* Dropdowns */
-select,
-.viterbi-dropdown {
+select {
   width: 100%;
   background: var(--color-neutral-100);
   border: 2px solid var(--color-neutral-300);
@@ -605,22 +389,59 @@ select,
   padding-right: 2.5rem;
 }
 
-select:hover,
-.viterbi-dropdown:hover {
+select:hover {
   border-color: var(--color-primary);
   box-shadow: var(--shadow-lg);
 }
 
-select:focus,
-.viterbi-dropdown:focus {
+select:focus {
   border-color: var(--color-primary);
   box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
   outline: none;
 }
 
+/* Corpus content styling */
+.corpus-sentences,
+.corpus-content,
+#find-bigram-btn-container,
+#bigramBtn {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0;
+  margin: 0 0 12px 0;
+  box-sizing: border-box;
+}
+
+#find-bigram-btn-container:empty,
+.find-bigram-btn-container:empty {
+  display: none !important;
+}
+
+.corpus-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.corpus-sentence {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 4px;
+  margin-left: 1em;
+  padding-left: 0.5em;
+  line-height: 1.4;
+}
+
+/* Output table container - prevent overflow */
+#output-table-container {
+  overflow-x: auto !important;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
 /* Tables */
 table,
-.viterbi-table,
 .emission-matrix-table,
 .transition-matrix-table {
   width: 100%;
@@ -635,20 +456,7 @@ table,
   table-layout: auto;
 }
 
-.viterbi-table-container {
-  margin: 0.2rem 0;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  width: auto; /* Size based on table content */
-  max-width: 100%;
-  display: flex; /* Use flexbox for centering */
-  justify-content: center; /* Center the table horizontally */
-}
-
 table th,
-.viterbi-table th,
 .emission-matrix-table th,
 .transition-matrix-table th {
   background: var(--color-neutral-100);
@@ -662,7 +470,6 @@ table th,
 }
 
 table td,
-.viterbi-table td,
 .emission-matrix-table td,
 .transition-matrix-table td {
   padding: 0.75rem;
@@ -673,13 +480,11 @@ table td,
   color: var(--color-neutral-800);
 }
 
-table tr:nth-child(even) td,
-.viterbi-table tr:nth-child(even) td {
+table tr:nth-child(even) td {
   background: var(--color-neutral-50);
 }
 
-table tr:hover td,
-.viterbi-table tr:hover td {
+table tr:hover td {
   background: var(--color-neutral-100);
 }
 
@@ -726,9 +531,7 @@ table tr:hover td,
 }
 
 /* Input fields in tables */
-table input[type="text"],
-.viterbi-table input[type="text"],
-input.viterbi-input {
+table input[type="text"] {
   width: 100%;
   max-width: 80px;
   padding: 0.4rem 0.6rem;
@@ -741,30 +544,23 @@ input.viterbi-input {
   transition: all 0.2s ease;
 }
 
-table input[type="text"]:focus,
-.viterbi-table input[type="text"]:focus,
-input.viterbi-input:focus {
+table input[type="text"]:focus {
   border-color: var(--color-primary);
   box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
   outline: none;
 }
 
-table input[type="text"].correct,
-.viterbi-table input[type="text"].correct,
-input.viterbi-input.correct {
+table input[type="text"].correct {
   border-color: var(--color-success);
   background: rgba(76, 175, 80, 0.1);
 }
 
-table input[type="text"].incorrect,
-.viterbi-table input[type="text"].incorrect,
-input.viterbi-input.incorrect {
+table input[type="text"].incorrect {
   border-color: var(--color-error);
   background: rgba(244, 67, 54, 0.1);
 }
 
-/* Buttons */
-.viterbi-controls,
+/* Buttons - Reduce border visibility */
 .button-controls {
   display: flex;
   flex-wrap: wrap;
@@ -775,14 +571,15 @@ input.viterbi-input.incorrect {
 
 .btn,
 .sim-button,
-button {
-  border: none;
+button,
+.find-bigram-btn {
+  border: 1px solid rgba(255, 255, 255, 0.05) !important; /* Much more subtle border */
   border-radius: 2.2rem;
   font-size: 1rem;
   font-weight: 700;
   padding: 0.75rem 1.5rem;
   margin: 0.2rem;
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important; /* Very subtle shadow */
   transition: all 0.2s ease;
   cursor: pointer;
   display: inline-flex;
@@ -797,7 +594,7 @@ button {
 /* Primary buttons (Check button) */
 .btn-primary,
 .sim-button,
-#viterbi-check-btn {
+.find-bigram-btn {
   background: linear-gradient(
     90deg,
     var(--color-primary) 60%,
@@ -808,14 +605,14 @@ button {
 
 .btn-primary:hover,
 .sim-button:hover:not(:disabled),
-#viterbi-check-btn:hover:not(:disabled) {
+.find-bigram-btn:hover:not(:disabled) {
   background: linear-gradient(
     90deg,
     var(--color-primary-dark) 60%,
     var(--color-accent) 100%
   );
   transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
 }
 
 /* Disabled buttons */
@@ -827,26 +624,15 @@ button:disabled {
   cursor: not-allowed !important;
   opacity: 0.6 !important;
   transform: none !important;
-  box-shadow: var(--shadow-md) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08) !important;
 }
 
 .btn:disabled:hover,
 .sim-button:disabled:hover,
 button:disabled:hover {
   background: var(--color-neutral-400) !important;
-  box-shadow: var(--shadow-md) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08) !important;
   transform: none !important;
-}
-
-.viterbi-controls {
-  margin: 1.5rem 0;
-  padding: 1rem;
-  background: var(--color-neutral-50);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--color-neutral-200);
-  width: 100%; /* Full width to contain buttons and feedback */
-  display: flex;
-  flex-direction: column;
 }
 
 /* Feedback and Messages */
@@ -886,7 +672,6 @@ button:disabled:hover {
   border: 1px solid var(--color-neutral-200);
 }
 
-/* Test sentence header with inline title and info icon */
 .sim-sentence-header {
   display: flex;
   align-items: center;
@@ -896,7 +681,6 @@ button:disabled:hover {
   flex-wrap: wrap;
 }
 
-/* Left pane layout - title on separate line */
 #full-sentence .sim-sentence-header {
   flex-direction: column;
   align-items: center;
@@ -904,7 +688,6 @@ button:disabled:hover {
   gap: 0.25rem;
 }
 
-/* Right pane layout - title inline with sentence and icon */
 #fldiv .sim-sentence-header {
   flex-direction: row;
   align-items: center;
@@ -1103,19 +886,19 @@ button:disabled:hover {
 /* Desktop Layout - when screen is wide enough */
 @media (min-width: 1200px) {
   .main-content {
-    padding: 0 2rem; /* Outer padding for page layout */
+    padding: 0 2rem;
   }
 
   /* Main-2pane-container should match main-content width */
   #main-2pane-container {
     flex-direction: row;
-    gap: 2rem; /* Gap between panes */
+    gap: 1rem; /* Reduced gap for desktop too */
     width: 100%;
     max-width: 100%;
     margin: 0;
     padding: 0;
     overflow-x: visible;
-    justify-content: flex-start; /* Align panes to start */
+    justify-content: flex-start;
   }
 
   /* Instructions panel will be sized by JavaScript to match main-2pane-container */
@@ -1125,27 +908,20 @@ button:disabled:hover {
   }
 
   #left-pane {
-    flex: 0 0 auto; /* Size based on content */
-    width: auto; /* Let content determine width */
-    min-width: 0; /* Allow shrinking if needed */
-    max-width: none; /* No artificial max width */
+    flex: 0 0 25% !important; /* Consistent 25% on desktop */
+    width: 25% !important;
+    min-width: 280px;
+    max-width: 25% !important;
   }
 
   #right-pane {
-    flex: 0 0 auto; /* Size based on content */
-    width: auto; /* Let content determine width */
-    min-width: 0; /* Allow shrinking if needed */
-    max-width: none; /* No artificial max width */
+    flex: 1 !important; /* Takes remaining 75% minus gap */
+    width: auto !important;
+    min-width: 0;
+    max-width: none !important;
   }
 
   /* Allow content-based sizing for sections */
-  .viterbi-table-container {
-    overflow-x: auto;
-    width: auto; /* Let content determine width */
-    max-width: 100%;
-  }
-
-  .viterbi-section,
   .matrices-section {
     overflow-x: auto;
     width: auto; /* Let content determine section width */
@@ -1156,14 +932,6 @@ button:disabled:hover {
     width: auto; /* Natural table width */
     max-width: none; /* Remove max width constraint */
   }
-
-  /* Keep controls full width and properly structured */
-  .viterbi-section .viterbi-controls {
-    width: 100%; /* Full width in the section */
-    max-width: none; /* Remove max width constraint */
-    margin-left: 0;
-    margin-right: 0;
-  }
 }
 
 /* Tablet Layout */
@@ -1172,10 +940,10 @@ button:disabled:hover {
     padding: 0 1rem; /* Outer padding for page layout */
   }
 
-  /* Main-2pane-container should match main-content width */
+  /* Main-2pane-container transforms to column layout */
   #main-2pane-container {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem; /* Reduced gap for tablet */
     width: 100%;
     max-width: 100%;
     margin: 0;
@@ -1196,17 +964,8 @@ button:disabled:hover {
     min-width: 0;
   }
 
-  .viterbi-section,
   .matrices-section {
     padding: 1.25rem;
-  }
-
-  /* Tablet-specific button layout */
-  .viterbi-buttons-row {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    justify-content: center;
   }
 
   .btn,
@@ -1227,55 +986,47 @@ button:disabled:hover {
 
   /* Table responsive adjustments for tablets */
   table,
-  .viterbi-table,
   .pos-tags-table {
     font-size: 0.9em;
   }
 
   table th,
-  .viterbi-table th,
   .pos-tags-table th {
     padding: 0.8rem 0.6rem;
     font-size: 0.9em;
   }
 
   table td,
-  .viterbi-table td,
   .pos-tags-table td {
     padding: 0.65rem 0.5rem;
     font-size: 0.85em;
   }
 
-  table input[type="text"],
-  .viterbi-table input[type="text"],
-  input.viterbi-input {
+  table input[type="text"] {
     max-width: 70px;
     font-size: 0.85em;
   }
 }
 
+/* Replace the Mobile Layout section (lines 736-900) with this updated version: */
+
 /* Mobile Layout */
 @media (max-width: 767px) {
   .main-content {
-    padding: 0 0.5rem; /* Outer padding for page layout */
-  }
-
-  /* Main-2pane-container should match main-content width */
-  #main-2pane-container {
-    order: 1; /* Main content second */
+    padding: 0 0.5rem;
+    width: 100%;
+    max-width: 100vw;
+    display: flex;
     flex-direction: column;
-    gap: 1rem;
-    width: fit-content;
-    margin: 1rem auto;
-    padding: 0;
-    overflow-x: auto;
+    align-items: center; /* Center all content */
   }
 
-  /* Instructions panel will be sized by JavaScript to match main-2pane-container */
+  /* Instructions panel comes first and centered */
   .instructions-panel {
-    order: 0; /* Instructions panel first */
-    margin: 0.2rem auto; /* Center horizontally like main-2pane-container */
-    min-width: 0; /* Allow natural sizing */
+    order: 0;
+    width: 100%;
+    max-width: 100%;
+    margin: 0.5rem auto 1rem auto;
     box-sizing: border-box;
   }
 
@@ -1295,50 +1046,103 @@ button:disabled:hover {
     font-size: 0.93em;
   }
 
-  #left-pane,
-  #right-pane {
+  /* Main container transforms to column layout and centers content */
+  #main-2pane-container {
+    order: 1;
+    flex-direction: column;
+    gap: 1rem;
     width: 100%;
-    max-width: none;
-    min-width: 0;
-    min-height: 100px; /* Ensure visible area for both panes */
-    flex: 1 1 auto;
-  }
-  #left-pane {
-    min-height: 200px; /* Show dropdown and result by default, viterbi style */
-  }
-  #right-pane {
-    min-height: 120px;
-  }
-  #corpus-info {
-    padding: 0.5rem;
+    max-width: 100%;
+    margin: 0 auto; /* Center the container */
+    padding: 0;
+    overflow-x: visible;
+    display: flex;
+    align-items: center; /* Center child elements horizontally */
   }
 
-  /* Keep matrices tabbed on mobile */
+  /* Left pane becomes centered and appears first */
+  #left-pane {
+    flex: none !important;
+    width: 90% !important; /* Slightly less than full width for better centering */
+    max-width: 500px !important; /* Max width for better readability */
+    min-width: 0 !important;
+    padding: 1rem;
+    margin: 0 auto 1rem auto; /* Center horizontally with bottom margin */
+    order: 1; /* First in mobile */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* Stretch content within the pane */
+  }
+
+  /* Right pane appears below left pane and centered */
+  #right-pane {
+    flex: none !important;
+    width: 90% !important; /* Slightly less than full width for better centering */
+    max-width: 500px !important; /* Max width for better readability */
+    min-width: 0 !important;
+    padding: 1rem;
+    margin: 0 auto; /* Center horizontally */
+    order: 2; /* Second in mobile */
+    box-sizing: border-box;
+    overflow-x: auto;
+    overflow-y: visible;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* Stretch content within the pane */
+  }
+
+  /* Fix corpus sections to work within centered layout */
+  #corpus-info {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+
+  #corpus-selection {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto 1rem auto;
+    padding: 0.75rem;
+    box-sizing: border-box;
+  }
+
+  /* Compact matrices on mobile */
+  .matrices-section {
+    padding: 0.75rem;
+    overflow-x: auto;
+    width: 100%;
+  }
+
   .matrices-headers {
     gap: 0.5rem;
-    flex-wrap: wrap; /* Allow wrapping on very small screens */
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .matrix-title {
     padding: 0.5rem 0.75rem;
     font-size: 0.9em;
-    min-width: 120px; /* Smaller minimum width for mobile */
-    flex: 1; /* Allow equal distribution on mobile */
+    min-width: 100px;
+    flex: 1 1 auto;
   }
 
   .matrix-content-area {
-    min-height: 0; /* Remove min-height constraint on mobile */
+    min-height: 0;
+    width: 100%;
   }
 
   .matrix-table-display > .sim-section-title {
-    display: none; /* Keep section titles hidden */
+    display: none;
   }
 
   .matrix-table-display table {
-    margin: 0; /* Remove table margins on mobile */
+    margin: 0;
+    width: 100%;
+    font-size: 0.85em;
   }
 
-  /* Ultra-compact info icon */
+  /* Compact info icon */
   .info-icon {
     width: 18px;
     height: 18px;
@@ -1348,15 +1152,14 @@ button:disabled:hover {
     margin-left: 0.25rem;
   }
 
-  /* Responsive sentence headers */
+  /* Mobile sentence headers */
   .sim-sentence-header {
     flex-direction: column;
     align-items: center;
-    gap: 0.1rem;
+    gap: 0.25rem;
     text-align: center;
   }
 
-  /* Center info icon below title on mobile */
   #fldiv .sim-sentence-header {
     flex-direction: column;
     align-items: center;
@@ -1365,94 +1168,59 @@ button:disabled:hover {
 
   #fldiv .sim-sentence-header .info-icon {
     margin-left: 0;
-    margin-top: 0;
+    margin-top: 0.25rem;
   }
 
-  .viterbi-controls,
+  /* Mobile button layout */
   .button-controls {
-    padding: 1rem;
-    margin: 1rem 0;
-  }
-
-  .viterbi-buttons-row {
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    padding: 0.5rem;
     gap: 0.5rem;
-    width: 100%;
-  }
-  .button-controls {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-  }
-  .btn,
-  .sim-button {
-    width: 90%;
-    max-width: 320px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
   }
 
   .btn,
   .sim-button {
-    width: 100%;
-    margin: 0;
-    min-width: auto;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    margin: 0 !important;
     font-size: 0.95rem;
-    padding: 0.65rem 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 1.5rem;
   }
 
-  /* Make tables scroll horizontally on mobile if needed */
-  .viterbi-table-container {
-    overflow-x: auto;
-    width: 100%;
-    margin: 0.15rem 0;
-  }
-
-  .viterbi-section,
-  .matrices-section {
-    overflow-x: auto; /* Allow horizontal scrolling on mobile */
-    padding: 0.75rem;
-  }
-
-  /* Responsive table sizing */
+  /* Mobile table styling */
   table,
-  .viterbi-table,
   .pos-tags-table {
-    font-size: 0.85em;
+    font-size: 0.8em;
+    min-width: 100%;
   }
 
   table th,
-  .viterbi-table th,
   .pos-tags-table th {
-    padding: 0.6rem 0.4rem;
-    font-size: 0.8em;
+    padding: 0.5rem 0.25rem;
+    font-size: 0.75em;
   }
 
   table td,
-  .viterbi-table td,
   .pos-tags-table td {
-    padding: 0.5rem 0.3rem;
-    font-size: 0.8em;
+    padding: 0.4rem 0.2rem;
+    font-size: 0.75em;
   }
 
-  /* Responsive input fields */
-  table input[type="text"],
-  .viterbi-table input[type="text"],
-  input.viterbi-input {
-    max-width: 65px;
-    padding: 0.35rem 0.5rem;
-    font-size: 0.8em;
+  table input[type="text"] {
+    max-width: 50px;
+    padding: 0.25rem 0.35rem;
+    font-size: 0.75em;
   }
 
-  /* Responsive feedback and hints */
-  .feedback-message,
-  #viterbi-feedback {
+  /* Mobile feedback */
+  .feedback-message {
     padding: 0.75rem 1rem;
     font-size: 0.9em;
+    margin: 0.5rem 0;
   }
 
   #sim-hint .sim-hint {
@@ -1460,24 +1228,77 @@ button:disabled:hover {
     font-size: 0.85em;
   }
 
-  /* Modal responsive adjustments */
-  .modal-overlay {
-    padding: 0.5rem;
+  /* Fix dropdown consistency on mobile */
+  .dropdown-row,
+  .dropdown-container {
+    min-width: 0 !important;
+    width: 100% !important;
   }
 
-  .modal-content {
-    max-height: 85vh;
+  .dropdown-row select,
+  .dropdown-container select {
+    min-width: 0 !important;
+    width: 100% !important;
+    font-size: 0.9rem;
+    padding: 0.6rem 2rem 0.6rem 0.8rem;
   }
 
-  .modal-header,
-  .modal-body,
-  .modal-footer {
-    padding: 0.75rem;
+  /* Hide empty button containers properly on mobile */
+  #find-bigram-btn-container:empty {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+/* Override in mobile view for dropdowns */
+@media (max-width: 600px) {
+  .dropdown-row,
+  .dropdown-container {
+    min-width: 0 !important;
   }
 
-  .modal-body {
-    font-size: 0.9em;
-    line-height: 1.5;
+  .dropdown-row select,
+  .dropdown-container select {
+    min-width: 0 !important;
+  }
+
+  #main-2pane-container {
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  #left-pane,
+  #right-pane {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+    position: static;
+    visibility: visible;
+    height: auto;
+    overflow: visible;
+  }
+
+  #left-pane {
+    margin-bottom: 0.5rem;
+    min-height: 1px;
+  }
+
+  #corpus-selection {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto 0.5rem auto;
+    padding: 0.5rem 0.2rem;
+    box-sizing: border-box;
   }
 }
 
@@ -1515,13 +1336,11 @@ button:disabled:hover {
     padding: 0.75rem 1rem;
   }
 
-  .sim-section-title,
-  .viterbi-section-title {
+  .sim-section-title {
     font-size: 1em;
     margin-bottom: 0.2rem;
   }
 
-  .viterbi-section,
   .matrices-section,
   #corpus-selection,
   #corpus-info {
@@ -1570,29 +1389,24 @@ button:disabled:hover {
 
   /* Ultra-compact tables */
   table,
-  .viterbi-table,
   .pos-tags-table {
     min-width: 320px; /* Further reduced for very small screens */
     font-size: 0.75em;
   }
 
   table th,
-  .viterbi-table th,
   .pos-tags-table th {
     padding: 0.4rem 0.2rem;
     font-size: 0.7em;
   }
 
   table td,
-  .viterbi-table td,
   .pos-tags-table td {
     padding: 0.35rem 0.15rem;
     font-size: 0.7em;
   }
 
-  /* Responsive input fields */
-  table input[type="text"],
-  input.viterbi-input {
+  table input[type="text"] {
     max-width: 50px;
     padding: 0.25rem 0.3rem;
     font-size: 0.7em;
@@ -1606,19 +1420,8 @@ button:disabled:hover {
     min-height: 40px;
   }
 
-  /* Ultra-compact controls */
-  .viterbi-controls {
-    padding: 0.75rem;
-    margin: 0.75rem 0;
-  }
-
-  .viterbi-buttons-row {
-    gap: 0.4rem;
-  }
-
   /* Ultra-compact feedback */
-  .feedback-message,
-  #viterbi-feedback {
+  .feedback-message {
     padding: 0.5rem 0.75rem;
     font-size: 0.8em;
   }
@@ -1672,35 +1475,12 @@ button:disabled:hover {
     margin-top: 0;
   }
 
-  .viterbi-buttons-row {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
   .btn,
   .sim-button {
     flex: 1;
     min-width: 120px;
     max-width: 180px;
   }
-}
-
-/* Button layout - all buttons in one row */
-.viterbi-buttons-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-}
-
-/* Feedback area - full width below buttons */
-#viterbi-feedback {
-  width: 100%;
-  margin: 0;
-  padding: 1rem 1.5rem;
-  box-sizing: border-box;
 }
 
 /* Hint area - full width */
@@ -1740,7 +1520,7 @@ button:disabled:hover {
 }
 
 /* Ensure POS tags section displays properly in feedback area */
-#viterbi-feedback .pos-tags-section {
+.pos-tags-section {
   margin-top: 1.5rem;
   margin-bottom: 0;
   display: flex;
@@ -1748,13 +1528,13 @@ button:disabled:hover {
   align-items: center; /* Center content in the section */
 }
 
-#viterbi-feedback .pos-tags-section .sim-section-title {
+.pos-tags-section .sim-section-title {
   text-align: center; /* Center the title */
   margin-bottom: 1rem;
   align-self: stretch; /* Allow title to take full width */
 }
 
-#viterbi-feedback .pos-tags-table {
+.pos-tags-table {
   margin: 1rem auto 0 auto; /* Center the table */
 }
 
@@ -1888,28 +1668,3 @@ button:disabled:hover {
   box-shadow: none;
   border-radius: 0;
 }
-
-.corpus-sentences,
-.corpus-content,
-#find-bigram-btn-container,
-#bigramBtn {
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-  margin: 0 0 12px 0;
-  box-sizing: border-box;
-}
-.corpus-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.corpus-sentence {
-  width: 100%;
-  text-align: left;
-  margin-bottom: 4px;
-  margin-left: 2em;
-  padding-left: 0.5em;
-}
-
-/*# sourceMappingURL=main.css.map */
