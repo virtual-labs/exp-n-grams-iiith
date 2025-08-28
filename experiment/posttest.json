@@ -1,0 +1,175 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "What is the primary purpose of smoothing in N-Gram models?",
+      "answers": {
+        "a": "To assign nonzero probabilities to unseen N-Grams",
+        "b": "To remove all rare words from the corpus",
+        "c": "To increase the N value arbitrarily",
+        "d": "To ignore word order"
+      },
+      "explanations": {
+        "a": "Correct! Smoothing ensures that even unseen N-Grams get a small probability, preventing zero-probability issues.",
+        "b": "Incorrect. Smoothing does not remove words.",
+        "c": "Incorrect. Smoothing does not change the N value.",
+        "d": "Incorrect. Word order is still considered."
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which of the following is a unigram?",
+      "answers": {
+        "a": "language",
+        "b": "natural language",
+        "c": "processing natural language",
+        "d": "natural language processing"
+      },
+      "explanations": {
+        "a": "Correct! 'language' is a single word, making it a unigram.",
+        "b": "Incorrect. This is a bigram.",
+        "c": "Incorrect. This is a trigram.",
+        "d": "Incorrect. This is a 4-gram."
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which of the following best describes a limitation of N-Gram models?",
+      "answers": {
+        "a": "They cannot capture long-range dependencies in language",
+        "b": "They always produce grammatically correct sentences",
+        "c": "They require no training data",
+        "d": "They are only used for image processing"
+      },
+      "explanations": {
+        "a": "Correct! N-Gram models are limited by their short context window and cannot model long-range dependencies.",
+        "b": "Incorrect. N-Gram models can generate ungrammatical sentences.",
+        "c": "Incorrect. N-Gram models require training data to estimate probabilities.",
+        "d": "Incorrect. N-Gram models are not used for image processing."
+      },
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What is the main advantage of using trigrams over bigrams?",
+      "answers": {
+        "a": "Trigrams consider a longer context, potentially improving prediction accuracy",
+        "b": "Trigrams require less data than bigrams",
+        "c": "Trigrams ignore word order",
+        "d": "Trigrams are not used in NLP"
+      },
+      "explanations": {
+        "a": "Correct! Trigrams use two previous words as context, which can improve predictions compared to bigrams.",
+        "b": "Incorrect. Trigrams require more data due to increased context size.",
+        "c": "Incorrect. Trigrams still consider word order.",
+        "d": "Incorrect. Trigrams are widely used in NLP."
+      },
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "A trigram model assigns P(C|A B) = 0.2, P(B|START A) = 0.3, and P(A|START) = 0.4. What is the probability of the sequence START A B C?",
+      "answers": {
+        "a": "0.024",
+        "b": "0.9",
+        "c": "0.2",
+        "d": "0.3"
+      },
+      "explanations": {
+        "a": "Correct! The probability is 0.4 * 0.3 * 0.2 = 0.024.",
+        "b": "Incorrect. This is not the correct product.",
+        "c": "Incorrect. This is only one of the probabilities.",
+        "d": "Incorrect. This is only one of the probabilities."
+      },
+      "correctAnswer": "a",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Which of the following is NOT a use case for N-Gram models?",
+      "answers": {
+        "a": "Predicting the next word in a sentence",
+        "b": "Speech recognition",
+        "c": "Image segmentation",
+        "d": "Spelling correction"
+      },
+      "explanations": {
+        "a": "Incorrect. N-Gram models are used for next-word prediction.",
+        "b": "Incorrect. N-Gram models are used in speech recognition.",
+        "c": "Correct! Image segmentation is not a typical use case for N-Gram models.",
+        "d": "Incorrect. N-Gram models are used in spelling correction."
+      },
+      "correctAnswer": "c",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Which of the following best describes the chain rule in the context of N-Gram models?",
+      "answers": {
+        "a": "It decomposes the probability of a sequence into conditional probabilities",
+        "b": "It ignores the order of words in a sequence",
+        "c": "It increases the N value arbitrarily",
+        "d": "It is used only for unigrams"
+      },
+      "explanations": {
+        "a": "Correct! The chain rule allows us to express the probability of a sequence as a product of conditional probabilities.",
+        "b": "Incorrect. The chain rule preserves word order.",
+        "c": "Incorrect. The chain rule does not affect N value.",
+        "d": "Incorrect. The chain rule applies to all N-Gram models."
+      },
+      "correctAnswer": "a",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "A bigram model assigns P(D|C) = 0.6 and P(C|START) = 0.3. What is the probability of the sequence START C D?",
+      "answers": {
+        "a": "0.18",
+        "b": "0.9",
+        "c": "0.6",
+        "d": "0.3"
+      },
+      "explanations": {
+        "a": "Correct! The probability is 0.3 * 0.6 = 0.18.",
+        "b": "Incorrect. This is not the correct product.",
+        "c": "Incorrect. This is only one of the probabilities.",
+        "d": "Incorrect. This is only one of the probabilities."
+      },
+      "correctAnswer": "a",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Which of the following is a reason to use N-Gram models in NLP?",
+      "answers": {
+        "a": "They provide a simple and effective way to model language sequences",
+        "b": "They require no data",
+        "c": "They always generate perfect sentences",
+        "d": "They are only used for image processing"
+      },
+      "explanations": {
+        "a": "Correct! N-Gram models are simple, interpretable, and effective for many language modeling tasks.",
+        "b": "Incorrect. N-Gram models require data to estimate probabilities.",
+        "c": "Incorrect. N-Gram models can generate ungrammatical sentences.",
+        "d": "Incorrect. N-Gram models are not used for image processing."
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What is a context window in the context of N-Gram models?",
+      "answers": {
+        "a": "The number of previous words considered when predicting the next word",
+        "b": "The total number of words in a sentence",
+        "c": "The number of sentences in a corpus",
+        "d": "The number of N-Grams in a model"
+      },
+      "explanations": {
+        "a": "Correct! The context window is N-1 for an N-Gram model, representing the number of previous words considered.",
+        "b": "Incorrect. The context window is not the sentence length.",
+        "c": "Incorrect. The context window is not about sentence count.",
+        "d": "Incorrect. The context window is not the number of N-Grams."
+      },
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+    }
+  ]
+}
