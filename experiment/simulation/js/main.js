@@ -78,10 +78,10 @@ class CorpusManager {
     this.corpusData = null;
     try {
       if (file.endsWith(".jpg") || file.endsWith(".png")) {
-        sentencesDiv.innerHTML = `<img src="/data/corpora/${file}" alt="${file}" style="max-width:100%;" />`;
+        sentencesDiv.innerHTML = `<img src="/corpora/${file}" alt="${file}" style="max-width:100%;" />`;
       } else {
-        const response = await fetch(`data/corpora/${file}`);
-        // const response = await fetch(`simulation/data/corpora/${file}`);
+        const response = await fetch(`corpora/${file}`);
+        // const response = await fetch(`simulation/corpora/${file}`);
         if (!response.ok) throw new Error("File not found");
         const text = await response.text();
         // Expecting corpus, bigrams, order separated by '&' (as in PHP)
