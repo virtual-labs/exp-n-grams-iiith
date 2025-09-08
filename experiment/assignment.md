@@ -1,5 +1,3 @@
-### Assignment: N-Grams and Language Modeling
-
 **Q1. Trigram Probability Derivation and Calculation**
 A trigram is a second-order Markov model.
 
