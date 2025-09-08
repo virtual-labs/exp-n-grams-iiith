@@ -1,0 +1,175 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "What is an N-Gram in natural language processing?",
+      "answers": {
+        "a": "A sequence of N words or tokens",
+        "b": "A grammar rule",
+        "c": "A type of neural network",
+        "d": "A punctuation mark"
+      },
+      "explanations": {
+        "a": "Correct! An N-Gram is a contiguous sequence of N items (words or tokens) from a given text.",
+        "b": "Incorrect. N-Grams are not grammar rules.",
+        "c": "Incorrect. N-Grams are not neural networks.",
+        "d": "Incorrect. N-Grams are not punctuation marks."
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which of the following is a bigram?",
+      "answers": {
+        "a": "natural language",
+        "b": "language",
+        "c": "natural",
+        "d": "processing natural language"
+      },
+      "explanations": {
+        "a": "Correct! 'natural language' is a sequence of two words, making it a bigram.",
+        "b": "Incorrect. This is a unigram.",
+        "c": "Incorrect. This is a unigram.",
+        "d": "Incorrect. This is a trigram."
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Why do N-Gram models use the Markov assumption?",
+      "answers": {
+        "a": "To simplify probability calculations by considering only a limited context",
+        "b": "To increase the complexity of the model",
+        "c": "To ignore word order",
+        "d": "To model all possible word dependencies"
+      },
+      "explanations": {
+        "a": "Correct! The Markov assumption allows N-Gram models to consider only the previous N-1 words, making computation feasible.",
+        "b": "Incorrect. The Markov assumption reduces, not increases, complexity.",
+        "c": "Incorrect. Word order is still considered within the N-1 context.",
+        "d": "Incorrect. N-Gram models do not model all dependencies."
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which of the following is a common application of N-Gram models?",
+      "answers": {
+        "a": "Language modeling for speech recognition",
+        "b": "Image classification",
+        "c": "Sorting numbers",
+        "d": "Database indexing"
+      },
+      "explanations": {
+        "a": "Correct! N-Gram models are widely used in language modeling for speech recognition and other NLP tasks.",
+        "b": "Incorrect. N-Gram models are not used in image classification.",
+        "c": "Incorrect. Sorting numbers does not involve N-Gram models.",
+        "d": "Incorrect. Database indexing does not use N-Gram models."
+      },
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What is the main advantage of using trigrams over bigrams?",
+      "answers": {
+        "a": "Trigrams consider a longer context, potentially improving prediction accuracy",
+        "b": "Trigrams require less data than bigrams",
+        "c": "Trigrams ignore word order",
+        "d": "Trigrams are not used in NLP"
+      },
+      "explanations": {
+        "a": "Correct! Trigrams use two previous words as context, which can improve predictions compared to bigrams.",
+        "b": "Incorrect. Trigrams require more data due to increased context size.",
+        "c": "Incorrect. Trigrams still consider word order.",
+        "d": "Incorrect. Trigrams are widely used in NLP."
+      },
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What is a major limitation of N-Gram models as N increases?",
+      "answers": {
+        "a": "Data sparsity and increased computational requirements",
+        "b": "They become more accurate",
+        "c": "They ignore word order",
+        "d": "They require less training data"
+      },
+      "explanations": {
+        "a": "Correct! As N increases, the number of possible N-Grams grows rapidly, leading to data sparsity and higher computational needs.",
+        "b": "Incorrect. Accuracy may not always improve due to data sparsity.",
+        "c": "Incorrect. N-Gram models always consider word order within the N-1 context.",
+        "d": "Incorrect. More data is needed, not less."
+      },
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "A bigram model assigns P(A|B) = 0.5 and P(B|START) = 0.4. What is the probability of the sequence START B A?",
+      "answers": {
+        "a": "0.2",
+        "b": "0.9",
+        "c": "0.5",
+        "d": "0.4"
+      },
+      "explanations": {
+        "a": "Correct! The probability is 0.4 * 0.5 = 0.2.",
+        "b": "Incorrect. This is the sum, not the product, of the probabilities.",
+        "c": "Incorrect. This is only one of the probabilities.",
+        "d": "Incorrect. This is only one of the probabilities."
+      },
+      "correctAnswer": "a",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "What does smoothing accomplish in N-Gram models?",
+      "answers": {
+        "a": "Assigns nonzero probabilities to unseen N-Grams",
+        "b": "Removes all rare words from the corpus",
+        "c": "Increases the N value arbitrarily",
+        "d": "Ignores word order"
+      },
+      "explanations": {
+        "a": "Correct! Smoothing ensures that even unseen N-Grams get a small probability, preventing zero-probability issues.",
+        "b": "Incorrect. Smoothing does not remove words.",
+        "c": "Incorrect. Smoothing does not change the N value.",
+        "d": "Incorrect. Word order is still considered."
+      },
+      "correctAnswer": "a",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Which of the following is NOT a use case for N-Gram models?",
+      "answers": {
+        "a": "Predicting the next word in a sentence",
+        "b": "Speech recognition",
+        "c": "Image segmentation",
+        "d": "Spelling correction"
+      },
+      "explanations": {
+        "a": "Incorrect. N-Gram models are used for next-word prediction.",
+        "b": "Incorrect. N-Gram models are used in speech recognition.",
+        "c": "Correct! Image segmentation is not a typical use case for N-Gram models.",
+        "d": "Incorrect. N-Gram models are used in spelling correction."
+      },
+      "correctAnswer": "c",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Which of the following best describes the chain rule in the context of N-Gram models?",
+      "answers": {
+        "a": "It decomposes the probability of a sequence into conditional probabilities",
+        "b": "It ignores the order of words in a sequence",
+        "c": "It increases the N value arbitrarily",
+        "d": "It is used only for unigrams"
+      },
+      "explanations": {
+        "a": "Correct! The chain rule allows us to express the probability of a sequence as a product of conditional probabilities.",
+        "b": "Incorrect. The chain rule preserves word order.",
+        "c": "Incorrect. The chain rule does not affect N value.",
+        "d": "Incorrect. The chain rule applies to all N-Gram models."
+      },
+      "correctAnswer": "a",
+      "difficulty": "advanced"
+    }
+  ]
+}

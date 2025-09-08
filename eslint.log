@@ -1,0 +1,11 @@
+
+/home/runner/work/exp-n-grams-iiith/exp-n-grams-iiith/experiment/simulation/js/main.js
+    7:9   warning  'arrow' is assigned a value but never used  no-unused-vars
+  199:30  warning  'count' is defined but never used           no-unused-vars
+
+/home/runner/work/exp-n-grams-iiith/exp-n-grams-iiith/experiment/simulation/js/mobile-detection.js
+  355:7  warning  'gtag' is not defined  no-undef
+  400:7  warning  'gtag' is not defined  no-undef
+
+✖ 4 problems (0 errors, 4 warnings)
+

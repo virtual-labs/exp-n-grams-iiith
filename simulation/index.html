@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>N-Grams Simulation</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="main-content">
+        <!-- Instructions Panel -->
+        <div class="instructions-panel">
+          <div id="instructionsTab" class="instructions-header">
+            <h3>Instructions</h3>
+            <span class="arrow-icon">&#9660;</span>
+          </div>
+          <div id="instructionsContent" class="instructions-content collapsed">
+            <ol class="instructions-list">
+              <li>Select a corpus from the dropdown.</li>
+              <li>Click 'Find Bigram Probabilities' to view the table.</li>
+              <li>
+                Fill in the bigram probabilities based on the corpus sentences.
+              </li>
+              <li>Use 'Check', 'Show Answer', or 'Reset' as needed.</li>
+            </ol>
+          </div>
+        </div>
+        <div id="main-2pane-container">
+          <!-- Left Pane: Corpus selection, sentences, and button -->
+          <div id="left-pane">
+            <div class="dropdown-row">
+              <select id="corpus" disabled></select>
+            </div>
+            <div id="corpus-sentences"></div>
+            <div id="find-bigram-btn-container" class="button-container"></div>
+          </div>
+          <!-- Right Pane: Output table and controls -->
+          <div id="right-pane">
+            <div id="output-table-container"></div>
+            <div id="feedback"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/mobile-detection.js"></script>
+    <script src="js/main.js"></script>
+  <script src="../assets/js/iframeResize.js"></script>
+        
+        </body>
+</html>
