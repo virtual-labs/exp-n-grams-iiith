@@ -68,7 +68,7 @@ class CorpusManager {
       btnContainer.className = "button-container";
       sentencesDiv.parentNode.insertBefore(
         btnContainer,
-        sentencesDiv.nextSibling
+        sentencesDiv.nextSibling,
       );
     }
     btnContainer.innerHTML = "";
@@ -163,35 +163,66 @@ class CorpusManager {
       this.showBigramAnswers(bigrams, idx);
     document.getElementById("resetBtn").onclick = () => this.resetSimulation();
   }
+
+  parseProbabilityInput(rawValue) {
+    const trimmed = String(rawValue ?? "").trim();
+    if (!trimmed) {
+      return { valid: false, value: NaN };
+    }
+
+    const parsed = Number(trimmed);
+    if (!Number.isFinite(parsed) || parsed < 0 || parsed > 1) {
+      return { valid: false, value: NaN };
+    }
+
+    return { valid: true, value: parsed };
+  }
+
   checkBigramAnswers(bigrams, count) {
-    let userAns = [];
-    const corAns = bigrams.map((x) => parseFloat(x));
+    const corAns = bigrams.map((x) => Number(String(x).trim()));
     let allCorrect = true;
     const EPSILON = 1e-6;
+    let correctCells = 0;
+
     for (let i = 0; i < count; i++) {
-      const val = parseFloat(document.getElementById(i).value);
-      userAns[i] = val;
-      if (Math.abs(val - corAns[i]) >= EPSILON) {
+      const inputEl = document.getElementById(String(i));
+      const rawValue = inputEl ? inputEl.value : "";
+      const parsedUser = this.parseProbabilityInput(rawValue);
+      const expected = corAns[i];
+      const isCorrect =
+        parsedUser.valid &&
+        Number.isFinite(expected) &&
+        Math.abs(parsedUser.value - expected) < EPSILON;
+
+      if (!isCorrect) {
         document.getElementById("td" + i).style.backgroundColor = "#e53935"; // red
         document.getElementById("td" + i).style.color = "#fff";
         document.getElementById("td" + i).style.fontWeight = "bold";
-        document.getElementById(
-          "td" + i
-        ).innerHTML = `<input type="text" size="3" name="${i}" id="${i}" value="${val}" class="ngram-input" style="background:transparent;border:none;color:#fff;font-weight:bold;width:48px;text-align:center;"/>`;
+        document.getElementById("td" + i).innerHTML =
+          `<input type="text" size="3" name="${i}" id="${i}" value="${rawValue}" class="ngram-input" style="background:transparent;border:none;color:#fff;font-weight:bold;width:48px;text-align:center;"/>`;
         allCorrect = false;
       } else {
+        correctCells++;
         document.getElementById("td" + i).style.backgroundColor = "#43a047"; // green
         document.getElementById("td" + i).style.color = "#fff";
         document.getElementById("td" + i).style.fontWeight = "bold";
-        document.getElementById(
-          "td" + i
-        ).innerHTML = `<input type="text" size="3" name="${i}" id="${i}" value="${val}" class="ngram-input" style="background:transparent;border:none;color:#fff;font-weight:bold;width:48px;text-align:center;"/>`;
+        document.getElementById("td" + i).innerHTML =
+          `<input type="text" size="3" name="${i}" id="${i}" value="${rawValue}" class="ngram-input" style="background:transparent;border:none;color:#fff;font-weight:bold;width:48px;text-align:center;"/>`;
       }
     }
+
+    const feedbackDiv = document.getElementById("feedback");
     if (allCorrect) {
+      if (feedbackDiv) {
+        feedbackDiv.innerHTML =
+          '<div class="success" style="color:#2e7d32;font-weight:600;">All answers are correct. Great work!</div>';
+      }
       document.getElementById("sentence").innerHTML =
         "<b>All answers are correct!</b>";
     } else {
+      if (feedbackDiv) {
+        feedbackDiv.innerHTML = `<div class="error" style="color:#c62828;font-weight:600;">Some entries are incorrect or invalid. Enter decimal probabilities between 0 and 1. Correct cells: ${correctCells}/${count}.</div>`;
+      }
       document.getElementById("sentence").innerHTML = "";
     }
   }
