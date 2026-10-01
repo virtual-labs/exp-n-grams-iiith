@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -21,12 +21,23 @@
           </div>
           <div id="instructionsContent" class="instructions-content collapsed">
             <ol class="instructions-list">
-              <li>Select a corpus from the dropdown.</li>
-              <li>Click 'Find Bigram Probabilities' to view the table.</li>
+              <li>Select either English or Hindi corpus from the dropdown.</li>
+              <li>Read the corpus sentences shown in the left pane.</li>
               <li>
-                Fill in the bigram probabilities based on the corpus sentences.
+                Click Find Bigram Probabilities to generate the bigram table.
               </li>
-              <li>Use 'Check', 'Show Answer', or 'Reset' as needed.</li>
+              <li>
+                Fill each cell with P(next_word | current_word) as a decimal
+                value.
+              </li>
+              <li>Enter values only between 0 and 1.</li>
+              <li>
+                Click Check to validate your table and review colored cells.
+              </li>
+              <li>
+                Use Show Answer to view the expected bigram probabilities.
+              </li>
+              <li>Use Reset to restart the simulation.</li>
             </ol>
           </div>
         </div>
